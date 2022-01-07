@@ -1,6 +1,8 @@
 const { createPost, getPosts, getPostById, updatePost, deletePost } = require('../../../apis/posts.api');
 
-const router = require('koa-router')()
+const router = require('koa-router')();
+
+
 // router.get("/", (ctx, next) => {
 //     return new Promise((resolve, reject) => {
 //         ctx.body = {
