@@ -6,7 +6,7 @@ const Add = async (data) => {
     console.log(data);
 };
 
-const getALl = async () => {
+const getAll = async () => {
     const cursor = await posts.find();
     return cursor.toArray();
 };
@@ -24,4 +24,4 @@ const deleteById = async (id) => {
 };
 
 
-module.exports = { Add, getALl, getById, updateById, deleteById };
+module.exports = { Add, getAll, getById, updateById, deleteById };
