@@ -7,7 +7,7 @@ const Add = async (data) => {
 };
 
 
-const getALl = async () => {
+const getAll = async () => {
     const cursor = await users.find();
     return cursor.toArray();
 };
@@ -27,5 +27,5 @@ const deleteById = async (id) => {
     return await users.deleteOne({ _id: ObjectId(id) });
 };
 
-module.exports = { Add, getALl, getById, updateById, deleteById };
+module.exports = { Add, getAll, getById, updateById, deleteById };
 
