@@ -1,14 +1,16 @@
 const users = require("./index").db("facebook_demo").collection("users");
 
-const ObjectId = require("mongodb");
+const ObjectId = require("mongodb").ObjectId;
 
 const Add = async (data) => {
     console.log(data);
+    let result = await users.insertOne(data);
+    return result;
 };
 
 
 const getAll = async () => {
-    const cursor = await users.find();
+    let cursor = await users.find();
     return cursor.toArray();
 };
 
