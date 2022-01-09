@@ -3,7 +3,8 @@ const posts = require("./index").db("facebook_demo").collection("posts");
 const ObjectId = require("mongodb").ObjectId;
 
 const Add = async (data) => {
-    console.log(data);
+    let result = await posts.insertOne(data);
+    return result;
 };
 
 const getAll = async () => {
@@ -16,11 +17,13 @@ const getById = async (id) => {
 };
 
 const updateById = async (id, data) => {
-    console.log(await posts.findOne({ _id: ObjectId(id) }));
+    const result = await posts.replaceOne({ _id: ObjectId(id) }, data);
+    return result;
 };
 
 const deleteById = async (id) => {
-    return await posts.deleteOne({ _id: ObjectId(id) });
+    const result = await posts.deleteOne({ _id: ObjectId(id) });
+    return result;
 };
 
 
